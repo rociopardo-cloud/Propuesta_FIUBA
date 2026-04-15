@@ -466,6 +466,27 @@
   .d4  { animation-delay:0.4s; }
   .d5  { animation-delay:0.5s; }
 
+  @media print {
+    nav { display:none !important; }
+    .hero { min-height:auto; padding:48px 32px; }
+    section { padding:48px 32px; }
+    .numeros { padding:48px 32px; }
+    .cta { padding:48px 32px; }
+    footer { padding:24px 32px; }
+    .sol-cards-grid { grid-template-columns:repeat(2,1fr) !important; }
+    .mod-grid { grid-template-columns:repeat(2,1fr) !important; }
+    .valor-grid { grid-template-columns:repeat(2,1fr) !important; }
+    .num-grid { grid-template-columns:repeat(3,1fr) !important; }
+    .hero-inner { grid-template-columns:1fr !important; }
+    .hero-card { display:none; }
+    .diag-grid { grid-template-columns:1fr !important; }
+    .porq-grid { grid-template-columns:1fr 1fr !important; }
+    .sol-card, .mod-card, .valor-card, .porq-card { break-inside:avoid; }
+    .diagnostico, .soluciones, .modulos, .porq, .valor { break-before:page; }
+    * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    .hero-cta, .btn-w, .btn-o { display:none !important; }
+  }
+
   @media (max-width:960px) {
     nav { padding:0 24px; }
     .nav-right { display:none; }
@@ -1036,7 +1057,7 @@
     <p>Agendar una reunión de demo sin compromiso con el equipo de Xperts Consulting. En 45 minutos mostramos el módulo de Activos Fijos y Presupuesto corriendo en vivo.</p>
     <div class="cta-buttons">
       <a href="mailto:mecanica@fi.uba.ar" class="btn-w">📅 Agendar reunión de demo</a>
-      <a href="mailto:mecanica@fi.uba.ar" class="btn-o">📄 Descargar propuesta PDF</a>
+      <a href="#" class="btn-o" onclick="window.print(); return false;">📄 Descargar propuesta PDF</a>
     </div>
     <div style="margin-top:56px; display:grid; grid-template-columns:repeat(3,1fr); max-width:600px; margin-left:auto; margin-right:auto; gap:0; border:1px solid rgba(255,255,255,0.1); border-radius:14px; overflow:hidden;">
       <div style="padding:20px; text-align:center; border-right:1px solid rgba(255,255,255,0.1);">
